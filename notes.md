@@ -1,12 +1,13 @@
 #SIR
 '''python
 import numpy as np, matplotlib.pyplot as plt
-
+'''
+'''python
 beta, gamma = 0.2, 1./10
 N = 1000
 I, R = 1, 0
 S = N - I - R
-
+'''
 res = []
 for i in range(160):
     diff_I = beta * S * I / N
