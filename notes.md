@@ -1,13 +1,12 @@
 #SIR
-'''python
+```python
 import numpy as np, matplotlib.pyplot as plt
-'''
-'''python
+
 beta, gamma = 0.2, 1./10
 N = 1000
 I, R = 1, 0
 S = N - I - R
-'''
+
 res = []
 for i in range(160):
     diff_I = beta * S * I / N
@@ -24,7 +23,7 @@ ax.plot(Ss/1000, 'b', label='Susceptibility')
 ax.plot(Is/1000, 'y', label='Infected')
 ax.plot(Rs/1000, 'g', label='Recovered')
 ax.legend()
-'''
+
 
 
 
@@ -47,7 +46,4 @@ res = run_sim(calc_day, 160, N-1-0, 1, 0, 0)
 Ss, Is, Rs, cases = map(np.array, zip(*res))
 plt.plot(Is)
 plt.title(f'Cases/day - total {cases.sum():.0f} cases')
-
-
-
-
+```
