@@ -1,5 +1,5 @@
 #SIR
-
+'''python
 import numpy as np, matplotlib.pyplot as plt
 
 beta, gamma = 0.2, 1./10
@@ -23,7 +23,7 @@ ax.plot(Ss/1000, 'b', label='Susceptibility')
 ax.plot(Is/1000, 'y', label='Infected')
 ax.plot(Rs/1000, 'g', label='Recovered')
 ax.legend()
-
+'''
 
 
 
