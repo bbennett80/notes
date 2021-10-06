@@ -1,0 +1,17 @@
+https://blog.scottlowe.org/2015/01/27/using-fork-branch-git-workflow/
+
+1. git clone <link to repo>
+2. git checkout -b <new branch name>
+3. git push <>
+
+
+Basically, the “fork and branch” workflow looks something like this:
+    1. Fork a GitHub repository.
+    2. Clone the forked repository to your local system.
+    3. Add a Git remote for the original repository.
+    4. Create a feature branch in which to place your changes.
+    5. Make your changes to the new branch.
+    6. Commit the changes to the branch.
+    7. Push the branch to GitHub.
+    8. Open a pull request from the new branch to the original repo.
+    9. Clean up after your pull request is merged.
