@@ -17,3 +17,6 @@ Basically, the “fork and branch” workflow looks something like this:
     7. Push the branch to GitHub.
     8. Open a pull request from the new branch to the original repo.
     9. Clean up after your pull request is merged.
+
+
+"Personally I think one PR should be one logical change to the codebase - one new feature, or one bug fix. If that touches multiple files then that's fine - in fact I want the single PR to include the implementation, the updated tests for it and the updated documentation too" @simonw
