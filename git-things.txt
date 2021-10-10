@@ -1,13 +1,14 @@
 https://blog.scottlowe.org/2015/01/27/using-fork-branch-git-workflow/
     1. fork repo
     2. git clone <link to repo> (useful: git clone [url] --branch [branch] --single-branch)
-    3. git remote -v (fetch/pull)
+    3. git remote add [name] [URL] (double chekc: git remote -v (fetch/pull))
     4. git checkout -b <new branch name>
-    5. git push origin <new branch name>
-    6. git branch -d <new branch name>
+    5. make changes
+    6. git add, commit -m, status
     7. git push <remote> <branch> (usually "origin" "master")
-    8. git push --delete origin <new branch name>
-        Hint: 6, 7, 8 can be done on GH?
+    8. check GH for PR banner
+    9. Clean-up: git branch -d <new branch name>, git push --delete origin <new branch name>
+        Hint: 8, 9 can be done on GH?
 
 Basically, the “fork and branch” workflow looks something like this:
     1. Fork a GitHub repository.
