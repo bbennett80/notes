@@ -23,3 +23,5 @@ Basically, the “fork and branch” workflow looks something like this:
 
 
 "Personally I think one PR should be one logical change to the codebase - one new feature, or one bug fix. If that touches multiple files then that's fine - in fact I want the single PR to include the implementation, the updated tests for it and the updated documentation too" @simonw
+
+Is there a course to get started with git/github?
