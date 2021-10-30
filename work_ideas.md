@@ -1,4 +1,4 @@
-[] Genetics:
+[] Genetics: <br>
     - Something like DOCASSEMBLE for TRF, LMN, and PhL
     - Could use: 
         1. [streamlit](streamlit.io) 
