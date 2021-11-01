@@ -7,3 +7,5 @@
     - TRF probably not necessary?
     - Needs to be easy.
     - Add database???
+
+Just need a way to add existing notes to word doc based on testing criteria. (Check notes at work.)
