@@ -1,17 +1,42 @@
+<!DOCTYPE HTML>
 <html>
 <html lang="en">
     <head>
-    <title>Hello, world!</title>
+    <title>CancerIQ Helpers</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="description" content="" />
+    <script type="text/javascript">
+    function dynamicdropdown(listindex) {
+                document.getElementById("subcategory").length = 0;
+                switch (listindex)
+                    {
+                    case "Provider note" :
+                        document.getElementById("subcategory").options[0]=new Option("Biological Sex","");
+                        document.getElementById("subcategory").options[1]=new Option("Female","Female");
+                        document.getElementById("subcategory").options[2]=new Option("Male","Male");
+                        break;
+                    case "LMN" :
+                        document.getElementById("subcategory").options[0]=new Option("Please select framework","");
+                        document.getElementById("subcategory").options[1]=new Option("Strauts","Strauts");
+                        document.getElementById("subcategory").options[2]=new Option("Hibernate","Hibernate");
+                        return true;
+                            }
+            }
+    </script>
     </head>
     <body>
-          <h1>CancerIQ helpers</h1>
-          <select name=”Note helper”>
-          <option value=”Physician Note”>Physician Note</option>
-          <option value=”LMN”>LMN</option>
-          </select>
+        <h4>Select note type</h4>
+            <div class="category_div" id="category_div">Note type:
+                <select name="category" class="required-entry" id="category" onchange="javascript: dynamicdropdown(this.options[this.selectedIndex].value);">
+                <option value=""></option>
+                <option value="Physician Note">Physician Note</option>
+                <option value="LMN">LMN</option>
+                </select>
+            </div>
+            <div class="sub_category_div" id="sub_category_div">
+            <script type="text/javascript" language="JavaScript">
+            document.write('<select name="subcategory" id="subcategory"><option value="">Please select framework</option></select>')
     </body>
 </html>
 
