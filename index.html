@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Get Name</title>
+    </head>
+    <body>
+        <input type="text" placeholder="Name" id="inputName">
+        <button type="button" onclick="getName();">Get Name</button>
+        <script>
+            function getName() {
+            let inputVal = document.getElementById("inputName").value;
+            document.getElementById("changeText").innerHTML = inputVal
+            }
+        </script>
+        <div id="changeText">Change this</div>
+    </body>
+</html>
+
