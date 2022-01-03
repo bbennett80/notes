@@ -8,8 +8,7 @@
         <button type="button" onclick="getName();">Get Name</button>
         <script>
             function getName() {
-            let inputVal = document.getElementById("inputName").value;
-            document.getElementById("changeText").innerHTML = inputVal
+            document.getElementById("changeText").innerHTML = document.getElementById("inputName").value;
             }
         </script>
         <div id="changeText">Change this</div>
