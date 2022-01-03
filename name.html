@@ -8,8 +8,8 @@
         <button type="button" onclick="getName();">Get Name</button>
         <script>
             function getName() {
-            document.getElementById("changeText").innerHTML = document.getElementById("inputName").value;
-            // this works too. maybe using the variable is more readable?
+                let name = document.getElementById("inputName").value;
+                document.getElementById("changeText").innerHTML = name
             }
         </script>
         <div id="changeText">Change this</div>
