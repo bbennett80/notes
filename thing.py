@@ -12,6 +12,9 @@ def meds_match(meds, note):
 medication = meds_match(meds, note)
 medication
 
+
+# https://github.com/fastai/fastai/blob/master/fastai/text/core.py
+# functions in core.py will help with cleaning up notes
 import re
 
 def rm_useless_spaces(text):
@@ -19,3 +22,5 @@ def rm_useless_spaces(text):
     return _re_space.sub(' ', text)
 
 _re_space = re.compile(' {2,}')
+
+
