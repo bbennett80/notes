@@ -11,3 +11,11 @@ def meds_match(meds, note):
 
 medication = meds_match(meds, note)
 medication
+
+import re
+
+def rm_useless_spaces(text):
+    "Remove multiple spaces"
+    return _re_space.sub(' ', text)
+
+_re_space = re.compile(' {2,}')
