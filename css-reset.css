@@ -1,5 +1,5 @@
-from https://piccalil.li/blog/a-modern-css-reset/
-
+/* BEGIN RESET */
+/* from https://piccalil.li/blog/a-modern-css-reset/ */
 /* Box sizing rules */
 *,
 *::before,
@@ -74,6 +74,9 @@ select {
     scroll-behavior: auto !important;
   }
 }
+/* END RESET */
+
+/* add custom properties */
 
 :root {
   --name: value;
