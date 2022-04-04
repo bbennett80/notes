@@ -1,0 +1,63 @@
+/*
+ * https://everlanders.com/2021/08/24/wifi-generator-remote-control/
+ * Credit to Everlanders
+ * 
+ * connect to the ESP8266 WiFi "Attic Fan" (or whatever you name the device) then
+ * use web browser to go to http://192.168.4.1
+ * save this to your favorites or book mark
+ */
+ 
+ 
+#include <ESP8266WiFi.h>
+
+const char WiFiPassword[] = "1234567890";
+const char AP_NameChar[] = "Attic Fan";
+ 
+WiFiServer server(80);
+ 
+String header = "HTTP/1.1 200 OK\r\nContent-Type: text/html\r\n\r\n";
+String html = R"rawliteral(
+  <!DOCTYPE html>
+  <html>
+    <head>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'/>
+    <meta charset='utf-8'>
+    <style>
+      body {font-size:140%; font-family: Helvetica, sans-serif} 
+      #main {display: table; margin: auto; padding: 5px} 
+      h2 {text-align:center} 
+      .button {padding: 8px; width:100%; background-color: #4CAF50; font-size: 120%}
+    </style>
+    <title>Attic Fan</title>
+    </head>
+    <body>
+      <div id='main'><h2>Attic Fan</h2>
+        <form id='F1' action='POWERON'><input class='button' type='submit' value='ON' ></form><br>
+        <form id='F2' action='POWEROFF'><input class='button' type='submit' value='OFF' ></form><br>
+      </div>
+      </body>
+  </html>
+)rawliteral";
+ 
+String request = "";
+int On_Pin = D1;
+int LED = 2;
+
+void setup() {
+  pinMode(On_Pin, OUTPUT);  
+  pinMode(LED, OUTPUT);
+  boolean conn = WiFi.softAP(AP_NameChar, WiFiPassword);
+  server.begin();
+} // void setup()
+ 
+void loop() { 
+  WiFiClient client = server.available();
+  if (!client)  {  return;  }
+  request = client.readStringUntil('\r');
+  if (request.indexOf("POWERON") > 0)  { digitalWrite(On_Pin, HIGH); digitalWrite(LED, LOW); }
+  else if (request.indexOf("POWEROFF") > 0) { digitalWrite(On_Pin, LOW);  digitalWrite(LED, HIGH); }
+  client.flush();
+  client.print(header);
+  client.print(html);
+  delay(5);
+} // void loop() 
