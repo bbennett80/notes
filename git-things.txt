@@ -27,3 +27,10 @@ Basically, the “fork and branch” workflow looks something like this:
 *Is there a course to get started with git/github?
 
 *How many lines in repo? `git ls-files | xargs wc -l`
+
+- name: Check <1000 lines
+run: sloccount [list directories]; if [ $(sloccount [directory] | sed -n 's/.*Total Physical Source Lines of Code (SLOC)[ ]*= \([^ ]*\).*/\1/p' | tr -d ',') -gt 1000 ]; then exit 1; fi
+
+example - run: sloccount tinygrad test examples extra; if [ $(sloccount tinygrad | sed -n 's/.*Total Physical Source Lines of Code (SLOC)[ ]*= \([^ ]*\).*/\1/p' | tr -d ',') -gt 1000 ]; then exit 1; fi
+
+
